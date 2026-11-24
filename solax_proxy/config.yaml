@@ -1,0 +1,19 @@
+name: SolaX Proxy
+version: "1.0.0"
+slug: solax_proxy
+description: nginx in front of a SolaX inverter with a fixed X-Forwarded-For
+url: https://github.com/diogopms/ha-addons/tree/main/solax_proxy
+arch: [aarch64, amd64, armv7]
+startup: services
+boot: auto
+init: false
+ports:
+  80/tcp: 80
+ports_description:
+  80/tcp: Proxy port (point the SolaX integration here)
+options:
+  upstream: http://10.17.0.44
+  forwarded_for: 5.8.8.8
+schema:
+  upstream: url
+  forwarded_for: str

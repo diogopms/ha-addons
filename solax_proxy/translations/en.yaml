@@ -1,0 +1,9 @@
+configuration:
+  upstream:
+    name: Inverter address
+    description: URL of the SolaX inverter's web server, e.g. http://10.17.0.44
+  forwarded_for:
+    name: X-Forwarded-For
+    description: Value sent as X-Forwarded-For on every request to the inverter.
+network:
+  80/tcp: Proxy port (point the SolaX integration here)
